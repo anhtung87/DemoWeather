@@ -98,13 +98,15 @@ class ViewController: UIViewController {
     let tableView = UITableView()
     tableView.translatesAutoresizingMaskIntoConstraints = false
     tableView.backgroundView = UIView()
-    tableView.backgroundColor = .clear
+    tableView.backgroundColor = .systemPink
+    tableView.layer.backgroundColor = UIColor.clear.cgColor
     tableView.register(TempTableViewCell.self, forCellReuseIdentifier: "tableCell")
     return tableView
   }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    timeTableView.backgroundColor = .clear
     setupData()
     setupView()
     setupLayout()
@@ -255,6 +257,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 //    cell.statusImageView.image = UIImage(named: fakeHourInfo![indexPath.row].imageName)
 //    cell.tempLabel.text = fakeHourInfo![indexPath.row].temp
     cell.info = fakeHourInfo![indexPath.row]
+    cell.contentView.backgroundColor = .clear
+    cell.layer.backgroundColor = UIColor.clear.cgColor
     return cell
   }
 

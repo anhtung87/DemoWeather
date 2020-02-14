@@ -23,7 +23,7 @@ class TempTableViewCell: UITableViewCell {
     label.text = ""
     label.textAlignment = .center
     label.textColor = .white
-    label.font = .systemFont(ofSize: 20)
+    label.font = .systemFont(ofSize: 18)
     label.numberOfLines = 0
     return label
   }()
@@ -34,7 +34,7 @@ class TempTableViewCell: UITableViewCell {
     label.text = ""
     label.textAlignment = .center
     label.textColor = .white
-    label.font = .systemFont(ofSize: 20)
+    label.font = .systemFont(ofSize: 18)
     return label
   }()
   
@@ -44,7 +44,7 @@ class TempTableViewCell: UITableViewCell {
     label.text = ""
     label.textAlignment = .center
     label.textColor = .white
-    label.font = .systemFont(ofSize: 20)
+    label.font = .systemFont(ofSize: 18)
     return label
   }()
   
