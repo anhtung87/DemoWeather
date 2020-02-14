@@ -13,6 +13,7 @@ class TempTableViewCell: UITableViewCell {
   let containerView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .clear
     return view
   }()
   
@@ -23,6 +24,7 @@ class TempTableViewCell: UITableViewCell {
     label.textAlignment = .center
     label.textColor = .white
     label.font = .systemFont(ofSize: 20)
+    label.numberOfLines = 0
     return label
   }()
   
@@ -83,7 +85,7 @@ class TempTableViewCell: UITableViewCell {
     
     timeLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8).isActive = true
     timeLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8).isActive = true
-    timeLabel.widthAnchor.constraint(equalToConstant: 32).isActive = true
+    timeLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 32).isActive = true
     timeLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8).isActive = true
     
     minTemp.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8).isActive = true
@@ -94,12 +96,12 @@ class TempTableViewCell: UITableViewCell {
     maxTemp.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8).isActive = true
     maxTemp.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8).isActive = true
     maxTemp.trailingAnchor.constraint(equalTo: minTemp.leadingAnchor, constant: -24).isActive = true
-    maxTemp.widthAnchor.constraint(equalToConstant: 24).isActive = true
+    maxTemp.widthAnchor.constraint(equalToConstant: 28).isActive = true
     
     statusImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0).isActive = true
     statusImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0).isActive = true
-    statusImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.8).isActive = true
-    statusImageView.widthAnchor.constraint(equalTo: statusImageView.widthAnchor, multiplier: 1).isActive = true
+    statusImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    statusImageView.widthAnchor.constraint(equalTo: statusImageView.heightAnchor, multiplier: 1).isActive = true
   }
   
 }

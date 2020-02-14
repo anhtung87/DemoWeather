@@ -22,7 +22,7 @@ class ViewController: UIViewController {
   let backgroundImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: "background")
+    imageView.image = UIImage(named: "background2")
     return imageView
   }()
   
@@ -99,6 +99,7 @@ class ViewController: UIViewController {
     tableView.translatesAutoresizingMaskIntoConstraints = false
     tableView.backgroundView = UIView()
     tableView.backgroundColor = .clear
+    tableView.register(TempTableViewCell.self, forCellReuseIdentifier: "tableCell")
     return tableView
   }()
   
@@ -279,11 +280,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = TempTableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TempTableViewCell
     cell.timeLabel.text = fakeDayInfo![indexPath.row].time
     cell.statusImageView.image = UIImage(named: fakeDayInfo![indexPath.row].imageName)
     cell.maxTemp.text = fakeDayInfo![indexPath.row].max
     cell.minTemp.text = fakeDayInfo![indexPath.row].min
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 50
   }
 }
