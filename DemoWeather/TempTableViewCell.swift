@@ -17,8 +17,8 @@ class TempTableViewCell: UITableViewCell {
     return view
   }()
   
-  let timeLabel: UILabel = {
-    let label = UILabel()
+  let timeLabel: CustomLabel = {
+    let label = CustomLabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = ""
     label.textAlignment = .center
@@ -28,8 +28,8 @@ class TempTableViewCell: UITableViewCell {
     return label
   }()
   
-  let minTemp: UILabel = {
-    let label = UILabel()
+  let minTemp: CustomLabel = {
+    let label = CustomLabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = ""
     label.textAlignment = .center
@@ -38,8 +38,8 @@ class TempTableViewCell: UITableViewCell {
     return label
   }()
   
-  let maxTemp: UILabel = {
-    let label = UILabel()
+  let maxTemp: CustomLabel = {
+    let label = CustomLabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = ""
     label.textAlignment = .center
@@ -51,7 +51,6 @@ class TempTableViewCell: UITableViewCell {
   let statusImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: "")
     imageView.contentMode = .scaleToFill
     return imageView
   }()

@@ -34,6 +34,7 @@
 		6D8EA38023F6D01F0064FB99 /* HourTempModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourTempModel.swift; sourceTree = "<group>"; };
 		6D8EA38223F6DA730064FB99 /* DayTempModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTempModel.swift; sourceTree = "<group>"; };
 		6D8EA38423F6DBCF0064FB99 /* TempTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTableViewCell.swift; sourceTree = "<group>"; };
+		6D8EA38623F798620064FB99 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,7 @@
 		6D8EA35C23F6BC970064FB99 = {
 			isa = PBXGroup;
 			children = (
+				6D8EA38623F798620064FB99 /* README.md */,
 				6D8EA36723F6BC970064FB99 /* DemoWeather */,
 				6D8EA36623F6BC970064FB99 /* Products */,
 			);

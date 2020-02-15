@@ -22,7 +22,7 @@ class ViewController: UIViewController {
   let backgroundImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: "background2")
+    imageView.image = UIImage(named: "background3")
     return imageView
   }()
   
@@ -101,6 +101,7 @@ class ViewController: UIViewController {
     tableView.backgroundColor = .systemPink
     tableView.layer.backgroundColor = UIColor.clear.cgColor
     tableView.register(TempTableViewCell.self, forCellReuseIdentifier: "tableCell")
+    tableView.allowsSelection = false
     return tableView
   }()
   
@@ -253,9 +254,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TempCollectionViewCell
-//    cell.timeLabel.text = fakeHourInfo![indexPath.row].time
-//    cell.statusImageView.image = UIImage(named: fakeHourInfo![indexPath.row].imageName)
-//    cell.tempLabel.text = fakeHourInfo![indexPath.row].temp
     cell.info = fakeHourInfo![indexPath.row]
     cell.contentView.backgroundColor = .clear
     cell.layer.backgroundColor = UIColor.clear.cgColor
@@ -286,6 +284,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TempTableViewCell
     cell.timeLabel.text = fakeDayInfo![indexPath.row].time
+    if indexPath.row == 0 {
+      cell.timeLabel.font = .boldSystemFont(ofSize: 18)
+    }
     cell.statusImageView.image = UIImage(named: fakeDayInfo![indexPath.row].imageName)
     cell.maxTemp.text = fakeDayInfo![indexPath.row].max
     cell.minTemp.text = fakeDayInfo![indexPath.row].min

@@ -16,8 +16,8 @@ class TempCollectionViewCell: UICollectionViewCell {
     return view
   }()
   
-  let timeLabel: UILabel = {
-    let label = UILabel()
+  let timeLabel: CustomLabel = {
+    let label = CustomLabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = ""
     label.textColor = .white
@@ -29,13 +29,12 @@ class TempCollectionViewCell: UICollectionViewCell {
   let statusImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: "")
     imageView.contentMode = .scaleToFill
     return imageView
   }()
   
-  let tempLabel: UILabel = {
-    let label = UILabel()
+  let tempLabel: CustomLabel = {
+    let label = CustomLabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = ""
     label.textAlignment = .center
