@@ -68,6 +68,8 @@
 		6D8EA36723F6BC970064FB99 /* DemoWeather */ = {
 			isa = PBXGroup;
 			children = (
+				6D8EA38823F859450064FB99 /* Models */,
+				6D8EA38723F859210064FB99 /* VIews */,
 				6D8EA36823F6BC970064FB99 /* AppDelegate.swift */,
 				6D8EA36A23F6BC970064FB99 /* SceneDelegate.swift */,
 				6D8EA36C23F6BC970064FB99 /* ViewController.swift */,
@@ -75,13 +77,27 @@
 				6D8EA37123F6BC990064FB99 /* Assets.xcassets */,
 				6D8EA37323F6BC990064FB99 /* LaunchScreen.storyboard */,
 				6D8EA37623F6BC990064FB99 /* Info.plist */,
-				6D8EA37C23F6BEA20064FB99 /* CustomLabel.swift */,
-				6D8EA37E23F6CC9F0064FB99 /* TempCollectionViewCell.swift */,
-				6D8EA38023F6D01F0064FB99 /* HourTempModel.swift */,
-				6D8EA38223F6DA730064FB99 /* DayTempModel.swift */,
-				6D8EA38423F6DBCF0064FB99 /* TempTableViewCell.swift */,
 			);
 			path = DemoWeather;
+			sourceTree = "<group>";
+		};
+		6D8EA38723F859210064FB99 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				6D8EA38423F6DBCF0064FB99 /* TempTableViewCell.swift */,
+				6D8EA37E23F6CC9F0064FB99 /* TempCollectionViewCell.swift */,
+				6D8EA37C23F6BEA20064FB99 /* CustomLabel.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		6D8EA38823F859450064FB99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D8EA38023F6D01F0064FB99 /* HourTempModel.swift */,
+				6D8EA38223F6DA730064FB99 /* DayTempModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

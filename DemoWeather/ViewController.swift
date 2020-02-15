@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  //  MARK: setup fake data
+  
   var fakeHourInfo: [HourTemp]?
   var fakeDayInfo: [DayTemp]?
+  
+  //  MARK: declare UIView
   
   let backgroundView: UIView = {
     let view = UIView()
@@ -105,6 +109,8 @@ class ViewController: UIViewController {
     return tableView
   }()
   
+  //  MARK: ViewController lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     timeTableView.backgroundColor = .clear
@@ -114,6 +120,8 @@ class ViewController: UIViewController {
     setupCollectionView()
     setupTableView()
   }
+  
+  //  MARK: setup and layout UIView
   
   func setupView() {
     view.addSubview(backgroundImageView)
@@ -201,7 +209,7 @@ class ViewController: UIViewController {
     
     // thay đổi hướng scroll của collectionView
     if let flowLayout = temperatureCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-        flowLayout.scrollDirection = .horizontal
+      flowLayout.scrollDirection = .horizontal
     }
   }
   
@@ -246,12 +254,13 @@ class ViewController: UIViewController {
   }
 }
 
+// MARK: delegate UICollectionView
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return fakeHourInfo!.count
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TempCollectionViewCell
     cell.info = fakeHourInfo![indexPath.row]
@@ -259,22 +268,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     cell.layer.backgroundColor = UIColor.clear.cgColor
     return cell
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      
     return CGSize(width: UIScreen.main.bounds.maxX / 7, height: UIScreen.main.bounds.maxY / 5)
   }
   
   // hàm trả về khoảng cách giữa hai hàng
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      return 0
+    return 0
   }
   
   // hàm trả về khoảng cách giữa 2 item (tương tự 2 cột)
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-      return 0
+    return 0
   }
 }
+
+// MARK: delegate UITableView
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
